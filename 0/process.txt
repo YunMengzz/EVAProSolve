@@ -1,0 +1,20 @@
+1110/e8e/d9c/ea0         4->52  6->54
+4368/3726/3484/3744             4644 
+84/69/67/72
+TECH
+
+
+#include <stdio.h>
+int itc(){
+    char c;
+    scanf("%c",&c);
+    printf("%d",c);
+}
+int cti(){
+    int i;
+    scanf("%d",&i);
+    printf("%c",i);
+}
+int main(){
+    itc();
+}
