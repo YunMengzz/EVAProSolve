@@ -1,4 +1,14 @@
 #!/bin/bash
+function printPath(){
+    home = $(echo $HOME)
+    length = ${#home}
+    if [ "${$1:0:10}" = $home ]
+    then
+        echo "~${$1:$length}"
+    else
+        echo $1
+    fi
+}
 function getdir(){
     for ele in `ls $1`
     do  
@@ -10,7 +20,7 @@ function getdir(){
         else
             if [ "${dir_or_file##*.}"x = "$2"x ]
             then
-                echo $dir_or_file
+                printPath $dir_or_file
             fi
         fi
     done
