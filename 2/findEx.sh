@@ -1,4 +1,5 @@
 #!/bin/bash
+num = 0
 function printPath(){
     home = $(echo $HOME)
     length = ${#home}
@@ -8,6 +9,7 @@ function printPath(){
     else
         echo $1
     fi
+    ((num=num+1))
 }
 function getdir(){
     for ele in `ls $1`
@@ -28,6 +30,7 @@ function getdir(){
 
 while true
 do
+    num=0
     read -p "Please input file extension (q to quit):" file_ex
 
     if [ $file_ex == "q" ]
@@ -41,4 +44,5 @@ do
     fi
 
     getdir $dir_name $file_ex
+    echo "Total $num files."
 done
